@@ -15,10 +15,11 @@ app.get('/', (req, res) => {
 });
 
 const api = express.Router();
-
+import season from './season';
 api.get('/hello', (req, res) => {
   res.status(200).send({ message: 'hello world' });
 });
 
 // Version the api
 app.use('/api/v1', api);
+app.use('/api/season', season);
